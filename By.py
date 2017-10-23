@@ -1973,193 +1973,96 @@ def bot(op):
                     cl.sendText(msg.to, (bctxt))
                     t-=1
 #-----------------------------------------------
-            mimic = {
-
-    "status":False,
-
-    "target":{}
-
-}
-
-
-
-elif msg.from_ in mimic["target"] and mimic["status"] == True and mimic["target"][msg.from_] == True:
-
+            elif msg.from_ in mimic["target"] and mimic["status"] == True and mimic["target"][msg.from_] == True:
     text = msg.text
-
     if text is not None:
-
-        jendral.sendText(msg.to,text)
-
+        vansbot.sendText(msg.to,text)
     else:
-
         if msg.contentType == 7:
-
             msg.contentType = 7
-
             msg.text = None
-
             msg.contentMetadata = {
-
                                  "STKID": "6",
-
                                  "STKPKGID": "1",
-
                                  "STKVER": "100" }
-
             jendral.sendMessage(msg)
-
         elif msg.contentType == 13:
-
             msg.contentType = 13
-
             msg.contentMetadata = {'mid': msg.contentMetadata["mid"]}
-
             jendral.sendMessage(msg)
 elif "Mimic:" in msg.text:
-
     if msg.from_ in admin:
-
         cmd = msg.text.replace("Mimic:","")
-
         if cmd == "on":
-
             if mimic["status"] == False:
-
                 mimic["status"] = True
-
                 jendral.sendText(msg.to,"Mimic on")
-
             else:
-
                 jendral.sendText(msg.to,"Mimic already on")
-
         elif cmd == "off":
-
             if mimic["status"] == True:
-
                 mimic["status"] = False
-
                 jendral.sendText(msg.to,"Mimic off")
-
             else:
-
                 jendral.sendText(msg.to,"Mimic already off")
-
         elif "add:" in cmd:
-
             target0 = msg.text.replace("Mimic:add:","")
             target1 = target0.lstrip()
-
             target2 = target1.replace("@","")
-
             target3 = target2.rstrip()
-
             _name = target3
-
             gInfo = jendral.getGroup(msg.to)
-
             targets = []
-
             for a in gInfo.members:
-
                 if _name == a.displayName:
-
                     targets.append(a.mid)
-
             if targets == []:
-
                 jendral.sendText(msg.to,"No targets")
-
             else:
-
                 for target in targets:
-
                     try:
-
                         mimic["target"][target] = True
-
                         jendral.sendText(msg.to,"Success added target")
-
                         jendral.sendMessageWithMention(msg.to,target)
-
                         break
-
                     except:
-
                         jendral.sendText(msg.to,"Failed")
-
                         break
-
         elif "del:" in cmd:
-
             target0 = msg.text.replace("Mimic:del:","")
-
             target1 = target0.lstrip()
-
             target2 = target1.replace("@","")
-
             target3 = target2.rstrip()
-
             _name = target3
-
             gInfo = jendral.getGroup(msg.to)
-
             targets = []
-
             for a in gInfo.members:
-
                 if _name == a.displayName:
-
                     targets.append(a.mid)
-
             if targets == []:
-
                 jendral.sendText(msg.to,"No targets")
-
             else:
                 for target in targets:
-
                     try:
-
                         del mimic["target"][target]
-
                         jendral.sendText(msg.to,"Success deleted target")
-
                         jendral.sendMessageWithMention(msg.to,target)
-
                         break
-
                     except:
-
                         jendral.sendText(msg.to,"Failed!")
-
                         break
-
-        elif cmd == "list":
-
-            if mimic["target"] == {}:
-
-                jendral.sendText(msg.to,"No target")
-
+    elif cmd == "list":
+        if mimic["target"] == {}:
+             jendral.sendText(msg.to,"No target")
             else:
-
                 lst = "<<Lit Target>>"
-
                 total = len(mimic["target"])
-
                 for a in mimic["target"]:
-
                     if mimic["target"][a] == True:
-
                         stat = "On"
-
                     else:
-
                         stat = "Off"
-
                     lst += "\n->" + jendral.getContact(a).displayName + " | " + stat
-
                 jendral.sendText(msg.to,lst + "\nTotal:" + total)
 #-----------------------------------------------
             elif "Copy @" in msg.text:
