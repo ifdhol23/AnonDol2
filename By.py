@@ -7,7 +7,7 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = IFDHOL.LINE()
-cl.login(token='EmCNU9KAtjBn7m73SE3f.f/7rOrXiCzsN/SGSYMhBJW.3UooM/BmbKUemELr7bP8Q5vh9+czMlJRej+f/KH6DvU=')
+cl.login(qr=True)
 cl.loginResult()
 
 # client_id = ''
