@@ -10,18 +10,6 @@ cl = IFDHOL.LINE()
 cl.login(token='EmCNU9KAtjBn7m73SE3f.f/7rOrXiCzsN/SGSYMhBJW.3UooM/BmbKUemELr7bP8Q5vh9+czMlJRej+f/KH6DvU=')
 cl.loginResult()
 
-ki = IFDHOL.LINE()
-ki.login(token='EmHLvMaKZsoHtc6lKVBf.f/7rOrXiCzsN/SGSYMhBJW.9/iLtvjMmu/67z+JL8K94AYXA29oknS4ukZOBYzp2tE=')
-ki.loginResult()
-
-kk = IFDHOL.LINE()
-kk.login(token='EmI6mNFlOxfmPi6k3Whb.MNVt9Yd7HxHmwTrIul9PcW.4/8Th5TzQ4W/xrsr+3jsY5rZ9oZM6PyWApHWavlypiI=')
-kk.loginResult()
-
-kc = IFDHOL.LINE()
-kc.login(token='Em1hdhJ6NWVRXF9AXWtc.a5a2fPuWfUSiiEhRJYmida.795kKOOHNDBUPjIF5y2fX3HfxvVz64okW2OGniRkVfg=')
-kc.loginResult()
-
 # client_id = ''
 # client_secret = ''
 # access_token = ''
