@@ -101,8 +101,8 @@ Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
 
 Bots=[mid,Amid,Bmid,Cmid]
-admin=["ua7fb5762d5066629323d113e1266e8ca","uc8e2c2b906e2322592c6d8f91a0957f7"]
-creator=["ua7fb5762d5066629323d113e1266e8ca"]
+admin=["ua9bc35c918832c32bb462d9ec18941c0"]
+creator=["ua9bc35c918832c32bb462d9ec18941c0"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -1962,7 +1962,7 @@ def bot(op):
 #-----------------------------------------------
             elif msg.text in ["Creator"]:
 					msg.contentType = 13
-					msg.contentMetadata = {'mid': "ua7fb5762d5066629323d113e1266e8ca"}
+					msg.contentMetadata = {'mid': "ua9bc35c918832c32bb462d9ec18941c0"}
 					cl.sendMessage(msg)
 #-----------------------------------------------
             elif "Spam " in msg.text:
